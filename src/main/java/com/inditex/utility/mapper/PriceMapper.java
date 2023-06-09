@@ -10,7 +10,7 @@ import org.mapstruct.ReportingPolicy;
 public interface PriceMapper {
 
     @Mapping(source = "brand.id", target = "brandId")
-    @Mapping(source = "startDate", target = "applicationDate")
     @Mapping(source = "product.id", target = "productId")
+    @Mapping(source = "priceList.id", target = "appliedTariff")
     PricesOutDto entityToDto(Prices prices);
 }
