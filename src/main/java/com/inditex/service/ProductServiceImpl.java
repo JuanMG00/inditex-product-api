@@ -18,9 +18,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public PricesOutDto getProductInfo(PricesInDto dto) {
-        Prices prices = pricesRepository.findMatchingPrice(dto.productId(), dto.brandId(), dto.applicationDate())
+        Prices price = pricesRepository.findMatchingPrice(dto.productId(), dto.brandId(), dto.applicationDate())
                 .orElseThrow(() -> new EntityNotFoundException(
                         String.format("There is not any price set for the date %s", dto.applicationDate())));
-        return mapper.entityToDto(prices);
+        return mapper.entityToDto(price);
     }
 }
