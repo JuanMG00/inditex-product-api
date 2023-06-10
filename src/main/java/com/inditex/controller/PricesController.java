@@ -1,7 +1,7 @@
 package com.inditex.controller;
 
 import com.inditex.controller.dto.PricesOutDto;
-import com.inditex.controller.dto.PricesSpecification;
+import com.inditex.controller.dto.PricesInDto;
 import com.inditex.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class PricesController {
     private final ProductService productService;
 
     @GetMapping("/prices")
-    public ResponseEntity<PricesOutDto> getPrices(PricesSpecification criteria) {
+    public ResponseEntity<PricesOutDto> getPrices(PricesInDto criteria) {
         return ResponseEntity.ok(productService.getProductInfo(criteria));
 
     }
