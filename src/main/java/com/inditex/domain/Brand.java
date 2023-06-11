@@ -1,13 +1,14 @@
 package com.inditex.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

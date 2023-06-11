@@ -3,8 +3,7 @@ package com.inditex.domain;
 import com.inditex.domain.enums.Currency;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,6 +11,9 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Prices {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
